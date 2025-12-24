@@ -1,6 +1,7 @@
 const getAllFoods = async (search) => {
   const res = await fetch(
-    `https://taxi-kitchen-api.vercel.app/api/v1/foods/random?search=${search}`
+    `https://taxi-kitchen-api.vercel.app/api/v1/foods/random?search=${search}`,
+    { next: { revalidate: 10 } } // 10 sec er jonno current data k dhore rakhse
   );
   const data = await res.json();
   await new Promise((resolve) => setTimeout(resolve, 2000));

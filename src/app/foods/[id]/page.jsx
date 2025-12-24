@@ -1,13 +1,27 @@
 import getSingleFood from "@/lib/getSingleFood";
+import Image from "next/image";
 import React from "react";
+export async function generateStaticParams() {
+  return [{ id: "52898" }, { id: "52955" }, { id: "52926" }];
+}
+
+// Dynamic Metadata
+export async function generateMetadata({ params, searchParams }) {
+  const { id } = await params;
+  const food = await getSingleFood(id);
+
+  return {
+    title: food.title,
+  };
+}
 
 const FoodDetailsPage = async ({ params }) => {
   const { id } = await params;
 
   const food = await getSingleFood(id);
 
-  if(!food) {
-    return <h3 className="text-3xl">Food Not Found</h3>
+  if (!food) {
+    return <h3 className="text-3xl">Food Not Found</h3>;
   }
 
   return (
@@ -15,9 +29,11 @@ const FoodDetailsPage = async ({ params }) => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Image Section */}
         <div className="rounded-2xl overflow-hidden shadow-lg">
-          <img
+          <Image
             src={food.foodImg}
             alt={food.title}
+            width={800}
+            height={200}
             className="w-full h-full object-cover"
           />
         </div>

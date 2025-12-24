@@ -10,9 +10,13 @@ const InputSearch = () => {
     e.preventDefault();
     const value = e.target.search.value;
 
+    // Create a new search params
     const newParams = new URLSearchParams(params.toString());
+    // Set the params
     newParams.set("search", value);
+    // Push it to route
     router.push(`?${newParams.toString()}`);
+    e.reset()
   };
 
   return (

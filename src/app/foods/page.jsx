@@ -3,6 +3,13 @@ import getAllFoods from "@/lib/getAllFoods";
 import React from "react";
 import CartItems from "./CartItems";
 import InputSearch from "@/components/InputSearch";
+import style from "./foods.module.css";
+
+export const metadata = {
+  title: "All Foods",
+  description: "Best Fast Food in BD",
+};
+
 
 const FoodsPage = async ({ searchParams }) => {
   const { search = "" } = await searchParams;
@@ -10,7 +17,7 @@ const FoodsPage = async ({ searchParams }) => {
 
   return (
     <div>
-      <h2 className="text-3xl font-bold text-yellow-500">
+      <h2 className={`text-3xl font-bold text-yellow-500 ${style.bgred}`}>
         Total Foods: ({allFoods.length})
       </h2>
       <div className="my-3 w-xl">
