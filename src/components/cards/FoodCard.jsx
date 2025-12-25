@@ -1,15 +1,23 @@
 import Link from "next/link";
 import CardBtn from "../buttons/CardBtn";
+import Image from "next/image";
 
 const FoodCard = ({ food, onDetails, onAdd }) => {
   return (
     <div className="bg-gray-800 text-gray-300 rounded-xl shadow-md hover:shadow-lg transition overflow-hidden">
       {/* Image */}
       <div className="h-48 w-full overflow-hidden">
-        <img
+        {/* <img
           src={food.foodImg}
           alt={food.title}
           className="h-full w-full object-cover"
+        /> */}
+        <Image
+          src={food.foodImg}
+          alt={food.title}
+          className="h-full w-full object-cover"
+          width={300}
+          height={150}
         />
       </div>
 

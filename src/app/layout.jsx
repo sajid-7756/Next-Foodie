@@ -13,6 +13,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const roboto = {
+  weight: ["400", "500", "700"],
+  subsets: ["latin"],
+};
+
 export const metadata = {
   title: {
     default: "Foodie",
@@ -25,7 +30,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${roboto.className} antialiased`}
       >
         <header className="container mx-auto py-5 flex justify-between items-center">
           <h3 className="text-3xl font-bold">

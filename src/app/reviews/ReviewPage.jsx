@@ -3,6 +3,10 @@ import ReviewCard from "@/components/cards/ReviewCard";
 import React, { useEffect, useState } from "react";
 import ReviewLoading from "./ReviewLoading";
 
+const anek = ({
+  weight: ['400']
+})
+
 const ReviewsPage = () => {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -21,7 +25,7 @@ const ReviewsPage = () => {
   }
 
   return (
-    <div>
+    <div className={anek.className}>
       <h2 className="text-3xl font-bold text-yellow-500">
         Total Reviews: ({reviews.length})
       </h2>
