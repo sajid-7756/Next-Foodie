@@ -1,5 +1,5 @@
 import Link from "next/link";
-import CardBtn from "../buttons/CardBtn";
+import CardBtn from "../buttons/CartBtn";
 import Image from "next/image";
 
 const FoodCard = ({ food, onDetails, onAdd }) => {

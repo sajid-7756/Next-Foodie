@@ -1,5 +1,6 @@
 import getSingleFood from "@/lib/getSingleFood";
 import Image from "next/image";
+import { redirect } from "next/navigation";
 import React from "react";
 export async function generateStaticParams() {
   return [{ id: "52898" }, { id: "52955" }, { id: "52926" }];
@@ -32,8 +33,8 @@ const FoodDetailsPage = async ({ params }) => {
 
   const food = await getSingleFood(id);
 
-  if (!food) {
-    return <h3 className="text-3xl">Food Not Found</h3>;
+  if (!food.title) {
+    redirect("/foods");
   }
 
   return (

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const ReviewCard = ({ review }) => {
   const formattedDate = new Date(review.date).toLocaleDateString("en-US", {
     year: "numeric",
@@ -9,9 +11,11 @@ const ReviewCard = ({ review }) => {
     <div className="bg-white rounded-xl shadow-md p-5 space-y-4">
       {/* User Info */}
       <div className="flex items-center gap-4">
-        <img
+        <Image
           src={review.photo}
           alt={review.user}
+          height={200}
+          width={200}
           className="w-12 h-12 rounded-full object-cover"
         />
 
