@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import FeedbackCard from "@/components/cards/FeedbackCard";
 import getAllFeedbacks from "@/lib/getAllFeedbacks";
 import Link from "next/link";

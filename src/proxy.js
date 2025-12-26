@@ -30,12 +30,12 @@ export function proxy(request) {
   }
 
   // 🔒 Outside night → restrict ONLY feedback API
-  if (pathname.startsWith("/api/feedback")) {
-    return NextResponse.json(
-      { message: "Feedback API is restricted" },
-      { status: 403 }
-    );
-  }
+  // if (pathname.startsWith("/api/feedback")) {
+  //   return NextResponse.json(
+  //     { message: "Feedback API is restricted" },
+  //     { status: 403 }
+  //   );
+  // }
 
   // ✅ Allow everything else
   return NextResponse.next();

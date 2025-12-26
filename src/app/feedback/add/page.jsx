@@ -1,5 +1,8 @@
+export const dynamic = "force-dynamic";
+
 import FeedbackForm from "@/components/forms/FeedbackForm";
 import React from "react";
+
 
 const AddFeedback = () => {
   return (
